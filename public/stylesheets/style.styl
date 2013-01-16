@@ -1,0 +1,159 @@
+@import "font-awesome.min.css"
+@import url(http://fonts.googleapis.com/css?family=Slackey)
+
+sisal       = #D9CEB2
+snail_shell = #948C75
+morning_fog = #D5DED9
+lentil      = #7A6A53
+geyser      = #99B2B7
+grey        = #40383D
+
+html, body
+  background: geyser
+
+body
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif
+  color: grey
+
+#page
+  width: 750px
+  margin: 20px auto
+
+  h1
+    float: left
+    text-transform: uppercase
+    margin: 0
+    text-shadow: 3px 3px 0 morning_fog
+    font: 30px "Slackey", cursive
+
+  .btn-group
+    float: left
+    margin-top: 14px
+    width: 640px
+
+  .btn
+    position: relative
+    font-size: 12px
+    background: morning_fog
+    border: none
+    margin-right: 20px
+
+    &.active, &:hover
+      background: sisal
+
+    &:first-child, &:last-child
+      -webkit-border-radius: 0
+      border-radius: 0
+
+    &.btn-right
+      float: right
+      margin: 0
+      margin-left: 20px
+
+    .badge
+      position: absolute
+      top: -10px
+      right: -10px
+
+  .btn, .label
+    [class^="icon-"], [class*=" icon-"]
+      margin-right: 3px
+
+    &.star, &.label-right
+      [class^="icon-"], [class*=" icon-"]
+        margin-right: 0
+
+
+  .profil
+    float: left
+    margin-right: 20px
+
+    img
+      border: 5px dashed morning_fog
+
+  .create
+    background: white
+    border: 10px solid morning_fog
+    padding: 20px
+
+  article
+    position: relative
+    margin: 20px 0
+    background: white
+    border: 10px solid morning_fog
+
+    .visuel
+      float: left
+      background: white
+      padding: 20px
+      text-align: center
+
+      img, .drag-drop-img
+        width: 100px
+        border: 5px dashed morning_fog
+
+      .drag-drop-img
+        height: 120px
+
+        img
+          border: none
+
+    .content
+      float: left
+      width: 539px
+      padding: 20px
+      border-left: 1px solid morning_fog
+
+      .icon-quote-left
+        margin-right: 20px
+
+      h2
+        position: relative
+        z-index: 10
+        line-height: 44px
+        margin: 5px 0 20px 0
+
+      .progress-info
+        .bar
+          background-color: geyser
+
+
+      .label-right
+        float: right
+        margin-left: 5px
+
+      .avancee
+        line-height: 1
+        margin: 0
+        padding: 0
+        position: absolute
+        z-index: 1
+        top: 10px
+        right: 20px
+        font: 50px "Slackey", cursive
+        color: #EEE
+
+    .actions
+      position: absolute
+      top: -20px
+      right: -54px
+      text-align: center
+
+      a
+        color: grey
+        display: block
+        padding: 10px
+        background: morning_fog
+        margin: 10px 0
+
+        &:hover
+          background: sisal
+          text-decoration: none
+          text-shadow: 1px 1px 0 white
+
+  input:focus
+    border-color: sisal
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px sisal
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px sisal
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px sisal
+

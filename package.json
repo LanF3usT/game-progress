@@ -1,0 +1,16 @@
+{
+  "name": "game progress",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "nodemon app.coffee"
+  },
+  "dependencies": {
+    "connect": "*",
+    "express": "3.0.6",
+    "ejs": "*",
+    "stylus": "*",
+    "mongoose": "*",
+    "date-utils": "*"
+  }
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+  </head>
+  <body>
+
+    <script type="text/template" id="jeu-template">
+      <article class="clearfix">
+        <div class="visuel">
+          <img src="/images/jeux/DMC_PS3_FOBboxart_160w.jpeg" alt="DmC">
+        </div>
+
+        <div class="content">
+          <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
+
+          <h2><%= titre %></h2>
+
+          <p class="avancee">35%</p>
+
+          <p class="infos">
+            <span class="label">
+              <i class="icon-time icon-white"></i>
+              Démarré le <%= created_at.toFormat("DD/MM/YYYY") %>
+            </span>
+            <span class="label label-info" title="Support">
+              <i class="icon-hdd icon-white"></i>
+              <%= support %>
+            </span>
+            <span class="label label-inverse" title="Objectif">
+              <i class="icon-trophy icon-white"></i>
+              Faire les 100%
+            </span>
+            <span class="label star" title="Difficulté">
+              <i class="icon-star icon-white"></i>
+              <i class="icon-star icon-white"></i>
+              <i class="icon-star icon-white"></i>
+              <i class="icon-star-empty icon-white"></i>
+              <i class="icon-star-empty icon-white"></i>
+            </span>
+            <span class="label label-success label-right"><i class="icon-plus"></i></span>
+            <span class="label label-important label-right"><i class="icon-minus"></i></span>
+          </p>
+
+          <div class="progress progress-info progress-striped">
+            <div class="bar" style="width: 35%"></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a href="#"><i class="icon-move"></i></a>
+          <a href="/edit/<%= _id %>"><i class="icon-pencil"></i></a>
+          <a href="/delete/<%= _id %>"><i class="icon-remove"></i></a>
+        </div>
+      </article>
+    </script>
+
+    <div id="page">
+      <header class="clearfix">
+        <div class="profil">
+          <a href="." title="">
+            <img src="http://www.gravatar.com/avatar/7aecc2cd4a77ead1bb9bcf1f250a7fc4" alt="">
+          </a>
+        </div>
+
+        <h1><%= title %></h1>
+
+        <div class="btn-group">
+          <button class="btn active">
+            <i class="icon-home"></i>
+            Tous les jeux
+            <span class="badge">2</span>
+          </button>
+          <button class="btn">
+            <i class="icon-spinner"></i>
+            En cours
+            <span class="badge badge-info">1</span>
+          </button>
+          <button class="btn">
+            <i class="icon-trophy"></i>
+            Terminés
+            <span class="badge badge-success">1</span>
+          </button>
+          <button id="add-game" class="btn btn-right">
+            <i class="icon-plus"></i>
+            Ajouter un jeu
+          </button>
+        </div>
+      </header>
+
+      <form class="add" action="/add" method="post">
+
+        <article class="clearfix">
+          <div class="visuel">
+            <div class="drag-drop-img"></div>
+          </div>
+
+          <div class="content">
+            <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
+
+            <h2><input class="input-xlarge" type="text" name="titre" placeholder="Titre"></h2>
+
+            <select name="support">
+              <option>PS3</option>
+              <option>PC</option>
+              <option>Wii</option>
+            </select>
+
+            <div class="input-append">
+              <input class="input-medium" type="text" name="duree" placeholder="Durée du jeu">
+              <span class="add-on">heure(s)</span>
+            </div>
+
+            <div class="input-append">
+              <input class="input-medium" type="text" name="avancee" placeholder="Avancée dans le jeu">
+              <span class="add-on">heure(s)</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a href="#" class="submit-form"><i class="icon-ok"></i></a>
+            <a href="#" class="close-form"><i class="icon-remove"></i></a>
+          </div>
+        </article>
+
+      </form>
+
+      <% jeux.forEach(function(jeu) { %>
+      <article class="clearfix">
+        <div class="visuel">
+          <img src="/images/jeux/DMC_PS3_FOBboxart_160w.jpeg" alt="DmC">
+        </div>
+
+        <div class="content">
+          <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
+
+          <h2><%= jeu.titre %></h2>
+
+          <p class="avancee">35%</p>
+
+          <p class="infos">
+            <span class="label">
+              <i class="icon-time icon-white"></i>
+              Démarré le <%= jeu.created_at.toFormat("DD/MM/YYYY") %>
+            </span>
+            <span class="label label-info" title="Support">
+              <i class="icon-hdd icon-white"></i>
+              <%= jeu.support %>
+            </span>
+            <span class="label label-inverse" title="Objectif">
+              <i class="icon-trophy icon-white"></i>
+              Faire les 100%
+            </span>
+            <span class="label star" title="Difficulté">
+              <i class="icon-star icon-white"></i>
+              <i class="icon-star icon-white"></i>
+              <i class="icon-star icon-white"></i>
+              <i class="icon-star-empty icon-white"></i>
+              <i class="icon-star-empty icon-white"></i>
+            </span>
+            <span class="label label-success label-right"><i class="icon-plus"></i></span>
+            <span class="label label-important label-right"><i class="icon-minus"></i></span>
+          </p>
+
+          <div class="progress progress-info progress-striped">
+            <div class="bar" style="width: 35%"></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a href="#"><i class="icon-move"></i></a>
+          <a href="/edit/<%= jeu._id %>"><i class="icon-pencil"></i></a>
+          <a href="/delete/<%= jeu._id %>"><i class="icon-remove"></i></a>
+        </div>
+      </article>
+      <% }) %>
+
+    </div>
+
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/underscore.min.js"></script>
+    <script src="/javascripts/backbone.min.js"></script>
+    <script src="/javascripts/app.js"></script>
+  </body>
+</html>
