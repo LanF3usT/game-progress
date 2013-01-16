@@ -10,6 +10,7 @@ exports.index = (req, res) ->
   Jeux.find (err, jeux, count) ->
     res.render 'index',
       title: "Mes jeux"
+      jeux: jeux
 
 
 # POST

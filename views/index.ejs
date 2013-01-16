@@ -9,56 +9,6 @@
   </head>
   <body>
 
-    <script type="text/template" id="jeu-template">
-      <article class="clearfix">
-        <div class="visuel">
-          <img src="/images/jeux/DMC_PS3_FOBboxart_160w.jpeg" alt="DmC">
-        </div>
-
-        <div class="content">
-          <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
-
-          <h2><%= titre %></h2>
-
-          <p class="avancee">35%</p>
-
-          <p class="infos">
-            <span class="label">
-              <i class="icon-time icon-white"></i>
-              Démarré le <%= created_at.toFormat("DD/MM/YYYY") %>
-            </span>
-            <span class="label label-info" title="Support">
-              <i class="icon-hdd icon-white"></i>
-              <%= support %>
-            </span>
-            <span class="label label-inverse" title="Objectif">
-              <i class="icon-trophy icon-white"></i>
-              Faire les 100%
-            </span>
-            <span class="label star" title="Difficulté">
-              <i class="icon-star icon-white"></i>
-              <i class="icon-star icon-white"></i>
-              <i class="icon-star icon-white"></i>
-              <i class="icon-star-empty icon-white"></i>
-              <i class="icon-star-empty icon-white"></i>
-            </span>
-            <span class="label label-success label-right"><i class="icon-plus"></i></span>
-            <span class="label label-important label-right"><i class="icon-minus"></i></span>
-          </p>
-
-          <div class="progress progress-info progress-striped">
-            <div class="bar" style="width: 35%"></div>
-          </div>
-        </div>
-
-        <div class="actions">
-          <a href="#"><i class="icon-move"></i></a>
-          <a href="/edit/<%= _id %>"><i class="icon-pencil"></i></a>
-          <a href="/delete/<%= _id %>"><i class="icon-remove"></i></a>
-        </div>
-      </article>
-    </script>
-
     <div id="page">
       <header class="clearfix">
         <div class="profil">
